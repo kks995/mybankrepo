@@ -22,12 +22,12 @@
                 const credentials = btoa(userId + ':' + password); // Base64 encode
 
                 $.ajax({
-                    url: 'https://cors-anywhere.herokuapp.com/https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount', // Use the CORS proxy
+                    url: 'https://cors-anywhere.herokuapp.com/https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount;boomi_auth='+ credentials, // Use the CORS proxy
                     method: 'GET', // Change to 'POST' if needed
                     dataType: 'text',
                     beforeSend: function(xhr) {
                         //xhr.setRequestHeader('Authorization', 'Basic ' + credentials); // Set authorization header
-                        xhr.setRequestHeader('boomi_auth', credentials); // Set authorization header
+                        //xhr.setRequestHeader('boomi_auth', credentials); // Set authorization header
                     },
                     success: function(response) {
                         $('#responseField').text(response);
@@ -38,7 +38,7 @@
                             status: status,
                             error: error
                         });
-                        $('#responseField').text('Error: ' + error + " creds " + xhr + ' (Status: ' + status + ')');
+                        $('#responseField').text('Error: ' + error + ' (Status: ' + status + ')');
                     }
                 });
             });
