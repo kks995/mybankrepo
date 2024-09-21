@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Service Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Web Service Response</h1>
+    <button id="fetchData">Fetch Data</button>
+    <div id="responseField"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#fetchData').click(function() {
+                $.ajax({
+                    url: 'https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount', // Replace with your Boomi web service URL
+                    method: 'GET', // or 'POST' depending on your web service
+                    dataType: 'text', // or 'text', 'xml', etc. based on the response type
+                    success: function(response) {
+                        // Assuming response is JSON
+                        $('#responseField').html(JSON.stringify(response, null, 2));
+                    },
+                    error: function(xhr, status, error) {
+                        $('#responseField').html('Error: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
