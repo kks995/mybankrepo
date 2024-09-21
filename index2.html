@@ -19,7 +19,7 @@
                     
                 $.ajax({
                     url: 'https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount', // Replace with your Boomi web service URL
-                    method: 'POST', // Change to 'POST'
+                    method: 'GET', // Change to 'POST'
                     contentType: 'application/json', // or 'application/x-www-form-urlencoded' if required
                     data: JSON.stringify({ userId: userId, password: password }), // Send credentials as JSON
                     dataType: 'text',
