@@ -14,17 +14,15 @@
     <script>
         $(document).ready(function() {
             $('#fetchData').click(function() {
-                const userId = 'trainingrm-WDM3UW.YWU6P8'; // Replace with actual user ID
-                const password = 'a47b7724-1bb2-49e0-bd5b-afbd7bedbf66'; // Replace with actual password
-                const credentials = btoa(userId + ':' + password); // Base64 encode
-
+                 const userId = 'trainingrm-WDM3UW.YWU6P8'; // Replace with actual user ID
+                 const password = 'a47b7724-1bb2-49e0-bd5b-afbd7bedbf66'; // Replace with actual password
+                    
                 $.ajax({
                     url: 'https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount', // Replace with your Boomi web service URL
-                    method: 'GET', // Use 'POST' if needed
+                    method: 'POST', // Change to 'POST'
+                    contentType: 'application/json', // or 'application/x-www-form-urlencoded' if required
+                    data: JSON.stringify({ userId: userId, password: password }), // Send credentials as JSON
                     dataType: 'text',
-                    beforeSend: function(xhr) {
-                        xhr.setRequestHeader('Authorization', 'Basic ' + credentials); // Set authorization header
-                    },
                     success: function(response) {
                         $('#responseField').text(response);
                     },
@@ -37,3 +35,4 @@
     </script>
 </body>
 </html>
+
