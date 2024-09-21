@@ -16,14 +16,13 @@
             $('#fetchData').click(function() {
                 $.ajax({
                     url: 'https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount', // Replace with your Boomi web service URL
-                    method: 'GET', // or 'POST' depending on your web service
-                    dataType: 'text', // or 'text', 'xml', etc. based on the response type
+                    method: 'GET', // Use 'POST' if needed
+                    dataType: 'text', // Set to 'text' for text response
                     success: function(response) {
-                        // Assuming response is JSON
-                        $('#responseField').text(response);
+                        $('#responseField').text(response); // Insert the response text
                     },
                     error: function(xhr, status, error) {
-                        $('#responseField').text('Error: ' + error);
+                        $('#responseField').text('Error: ' + error); // Show error message
                     }
                 });
             });
