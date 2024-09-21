@@ -20,10 +20,10 @@
                     dataType: 'text', // or 'text', 'xml', etc. based on the response type
                     success: function(response) {
                         // Assuming response is JSON
-                        $('#responseField').html(JSON.stringify(response, null, 2));
+                        $('#responseField').text(response);
                     },
                     error: function(xhr, status, error) {
-                        $('#responseField').html('Error: ' + error);
+                        $('#responseField').text('Error: ' + error);
                     }
                 });
             });
