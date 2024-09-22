@@ -25,10 +25,10 @@
                     url: 'https://cors-anywhere.herokuapp.com/https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount;boomi_auth='+ credentials, // Use the CORS proxy
                     method: 'GET', // Change to 'POST' if needed
                     dataType: 'text',
-                    beforeSend: function(xhr) {
+                   // beforeSend: function(xhr) {
                         //xhr.setRequestHeader('Authorization', 'Basic ' + credentials); // Set authorization header
                         //xhr.setRequestHeader('boomi_auth', credentials); // Set authorization header
-                    },
+                   // },
                     success: function(response) {
                         $('#responseField').text(response);
                     },
