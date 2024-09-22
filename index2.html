@@ -31,6 +31,7 @@
                         //xhr.setRequestHeader('boomi_auth', credentials); // Set authorization header
                    // },
                     success: function(response) {
+                          console.log('Response received:', response); // Log the raw response
                         $('#responseField').text(response);
                     },
                     error: function(xhr, status, error) {
@@ -39,8 +40,8 @@
                             status: status,
                             error: error
                         });
-                        $('#responseField').text(response);
-                      //  $('#responseField').text('Error: ' + error + ' (Status: ' + status + ')');
+                        
+                       $('#responseField').text('Error: ' + error + ' (Status: ' + status + ')');
                     }
                 });
             });
