@@ -22,7 +22,8 @@
                 const credentials = btoa(userId + ':' + password); // Base64 encode
 
                 $.ajax({
-                    url: 'https://cors-anywhere.herokuapp.com/https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount;boomi_auth='+ credentials, // Use the CORS proxy
+                   // url: 'https://cors-anywhere.herokuapp.com/https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount;boomi_auth='+ credentials, // Use the CORS proxy
+                    url: 'https://c03-usa-east.integrate-test.boomi.com/ws/simple/getAccount;boomi_auth='+ credentials, // Use the CORS proxy 
                     method: 'GET', // Change to 'POST' if needed
                     dataType: 'text',
                    // beforeSend: function(xhr) {
